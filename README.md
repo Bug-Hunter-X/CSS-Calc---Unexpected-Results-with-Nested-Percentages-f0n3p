@@ -1,0 +1,2 @@
+# CSS Calc() Unexpected Results with Nested Percentages
+This example demonstrates unexpected behaviour of the `calc()` function in CSS when attempting to calculate percentages based on parent element percentages.  The `calc()` function is powerful but has limitations when dealing with indirectly related percentage values.
