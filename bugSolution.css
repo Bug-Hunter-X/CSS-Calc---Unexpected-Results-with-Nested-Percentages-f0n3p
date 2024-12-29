@@ -1,0 +1,25 @@
+Instead of trying to calculate a percentage relative to a parent's percentage within `calc()`, use alternative approaches:
+
+1. **Directly use pixels or ems:** If you know the approximate pixel or em size you need, avoid percentage calculations entirely.  This offers better predictability.
+
+2. **JavaScript:** For dynamic calculations involving parent percentages, leverage JavaScript to measure the parent's dimensions and calculate the child's width accordingly.
+
+3. **CSS Variables (Custom Properties):** Define a CSS variable for the parent element's width (or other relevant percentage).  Then, reference that variable in the child's `calc()` function. This improves maintainability and allows for reusable style definitions.  For example:
+
+```css
+:root {
+  --parent-width: 75%;
+}
+
+.parent {
+  width: var(--parent-width);
+}
+
+.child {
+  width: calc(50% - 20%); /* 20% of 75% is 15%  */
+}
+```
+
+4. **Adjust your design:** Consider a different design approach that avoids the need for complex percentage calculations. This might often be the simplest and most efficient solution.
+
+Choose the solution that best suits your specific requirements.  For simple static layouts, direct pixel or em values are often sufficient, while more complex dynamic layouts may benefit from JavaScript.
